@@ -67,6 +67,7 @@ const LoginPage = ({ onLogin }) => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-sky-200 via-sky-100 to-white animate-fade-in">
+    <img className=" rounded-full w-[5%] mb-5" src="https://media.licdn.com/dms/image/v2/D4E22AQFSSnN-YOoCHA/feedshare-shrink_800/feedshare-shrink_800/0/1710951284639?e=2147483647&v=beta&t=G9ExVYnV-bThZsdIF_8Rg_-Wi7nScbiuLYM8sfgeM7w" alt="driver"/>
       <Card className="w-full max-w-sm p-8 shadow-xl border border-blue-300 rounded-3xl bg-white">
         <CardContent>
           <h2 className="text-3xl font-extrabold mb-5 text-center text-blue-900">📖 DIA DOL E-Library</h2>
@@ -150,7 +151,10 @@ const ELibrary = () => {
 
   return (
     <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-gradient-to-br from-white via-blue-50 to-blue-100 text-black"} p-6 min-h-screen animate-fade-in`}>
+    <div className="flex items-center justify-center mb-8">
+    <img className=" rounded-full w-[5%]" src="https://media.licdn.com/dms/image/v2/D4E22AQFSSnN-YOoCHA/feedshare-shrink_800/feedshare-shrink_800/0/1710951284639?e=2147483647&v=beta&t=G9ExVYnV-bThZsdIF_8Rg_-Wi7nScbiuLYM8sfgeM7w" alt="driver"/>
       <h1 className="text-5xl font-extrabold mb-8 text-center drop-shadow-md tracking-wider">📚 DIA DOL E-Library Catalog</h1>
+      </div>
 
       <div className="flex justify-between items-center mb-6">
         <Input
