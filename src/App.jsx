@@ -67,15 +67,9 @@ const LoginPage = ({ onLogin }) => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-sky-200 via-sky-100 to-white animate-fade-in">
-    <img className=" rounded-full w-[5%] mb-10" src="https://media.licdn.com/dms/image/v2/D4E22AQFSSnN-YOoCHA/feedshare-shrink_800/feedshare-shrink_800/0/1710951284639?e=2147483647&v=beta&t=G9ExVYnV-bThZsdIF_8Rg_-Wi7nScbiuLYM8sfgeM7w" alt="driver"/>
       <Card className="w-full max-w-sm p-8 shadow-xl border border-blue-300 rounded-3xl bg-white">
-      
         <CardContent>
-        <div>
-            
-            <h2 className="text-3xl font-extrabold mb-5 text-center text-blue-900">📖 DIA DOL E-Library</h2>
-        </div>
-          
+          <h2 className="text-3xl font-extrabold mb-5 text-center text-blue-900">📖 DIA DOL E-Library</h2>
           <Input
             placeholder="Username"
             value={username}
@@ -156,11 +150,7 @@ const ELibrary = () => {
 
   return (
     <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-gradient-to-br from-white via-blue-50 to-blue-100 text-black"} p-6 min-h-screen animate-fade-in`}>
-    <div className="flex items-center justify-center">
-        <img className=" rounded-full w-[5%] mb-10" src="https://media.licdn.com/dms/image/v2/D4E22AQFSSnN-YOoCHA/feedshare-shrink_800/feedshare-shrink_800/0/1710951284639?e=2147483647&v=beta&t=G9ExVYnV-bThZsdIF_8Rg_-Wi7nScbiuLYM8sfgeM7w" alt="driver"/>
-        <h1 className="text-5xl font-extrabold mb-8 text-center drop-shadow-md tracking-wider">📚 DIA DOL E-Library Catalog</h1>
-    </div>
-      
+      <h1 className="text-5xl font-extrabold mb-8 text-center drop-shadow-md tracking-wider">📚 DIA DOL E-Library Catalog</h1>
 
       <div className="flex justify-between items-center mb-6">
         <Input
@@ -173,11 +163,14 @@ const ELibrary = () => {
           {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
         </Button>
       </div>
+      
 
-      <Tabs defaultValue="Engineering">
+      <div className="flex flex-col gap-y-6">
+
+      <Tabs defaultValue="Engineering" className="flex flex-col gap-20">
         <TabsList className="mb-8 flex flex-wrap gap-4 justify-center">
           {categories.map((category) => (
-            <TabsTrigger key={category} value={category} className="px-4 py-2 rounded-full bg-blue-400 hover:bg-blue-600 transition duration-200 ease-in-out transform hover:scale-110 text-white font-semibold shadow-md">
+            <TabsTrigger key={category} value={category} className="px-4 py-2 rounded-full bg-blue-400 hover:bg-blue-600 transition duration-200 ease-in-out transform hover:scale-110 text-black font-semibold shadow-md">
               {category}
             </TabsTrigger>
           ))}
@@ -185,7 +178,7 @@ const ELibrary = () => {
 
         {categories.map((category) => (
           <TabsContent value={category} key={category}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
               {books
                 .filter((book) => book.category === category &&
                   (book.author.toLowerCase().includes(filter) || book.year.toString().includes(filter)))
@@ -217,6 +210,7 @@ const ELibrary = () => {
           </TabsContent>
         ))}
       </Tabs>
+      </div>
 
       <div className="text-center mt-10">
         <Button onClick={exportBookmarks} className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-xl text-sm">
